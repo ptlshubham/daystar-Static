@@ -566,10 +566,10 @@
 .fa-key:before {
   content: "\f084";
 }
-.fa-gears:before,
+/* .fa-gears:before,
 .fa-cogs:before {
   content: "\f085";
-}
+} */
 .fa-comments:before {
   content: "\f086";
 }
