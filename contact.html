@@ -110,11 +110,81 @@
 				</button>
 				<!-- extra nav -->
 				<div class="extra-nav">
-					<!-- <div class="extra-cell">
-						<button id="quik-search-btn" type="button" class="site-button-link"><i class="la la-search"></i></button>
-					</div> -->
 					<div class="dlab-topbar-right">
-						<a href="contact-1.html" class="site-button radius-no btnhover11">GET A QUOTE</a>						
+						<!-- <a href="contact.html" class="site-button radius-no btnhover11">GET A QUOTE</a> -->
+						<a class="site-button radius-no btnhover11" data-toggle="modal"
+							data-target="#exampleModalCenter" style="color: white;">GET A QUOTE
+							<!-- <span class="button_label" onclick="buynow(7)" > </span> -->
+						</a>
+					</div>
+				</div>
+				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+					aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal modal-dialog-centered" role="document">
+						<form id="contactform" method="post" action="contact.php">
+							<div class="modal-content">
+								<div class="modal-header">
+									<div class="column mcb-column one column_column">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<div class="p-a20">
+											<h1 style="text-align: center;">Get A Quote</h1>
+											<div class="dzFormMsg"></div>
+										</div>
+									</div>
+
+								</div>
+								<input type="hidden" value="Contact" name="dzToDo">
+								<div class="modal-body">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<input name="dzName" type="text" required
+														class="form-control" placeholder="Your Name">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<div class="input-group">
+													<input name="dzEmail" type="email" class="form-control"
+														required placeholder="Your Email Id">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="input-group">
+													<input input list="services"  name="dzOther" type="text"  required class="form-control" placeholder="Service"id="service" name="Services">
+													<datalist id="services">
+														<option value="Stucco & Stone">
+														<option value="Soffit Installation">
+														<option value="Hardie Installation">
+														<option value="All Kind of renovation">
+													</datalist>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<div class="input-group">
+													<textarea name="dzMessage" rows="4" class="form-control"
+														required placeholder="Your Message..."></textarea>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer " style="border-top:none !important">
+									<button class="site-button radius-no btnhover11" type="submit"
+										style="color: white;"><span class="button_label">Send
+											Enquiry</span></button>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 				<!-- Quik search -->
@@ -376,10 +446,12 @@
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
-        <div class="dlab-bnr-inr overlay-black-middle bg-pt" style="background-image:url(assets/images/banner/bnr1.jpg);">
+        <div class="tp-banner-container"
+				style="background-image:url(assets/images/banner/Contact\ Us.jpg); height: 500px; background-size: cover;background-repeat: no-repeat;background-position: center;">
             <div class="container">
-                <div class="dlab-bnr-inr-entry">
-                    <!-- <h1 class="text-white">Contact Us 4</h1> -->
+				<h1 style=" padding-top: 230px; float: left; padding-left: 50px; font-size: 90px; color: #d2151e; font-family:'Times New Roman', Times, serif;">Contact Us</h1>
+                <!-- <div class="dlab-bnr-inr-entry "> -->
+                    <!-- <h1 class="text-white">Contact Us</h1> -->
 					<!-- Breadcrumb row -->
 					<!-- <div class="breadcrumb-row">
 						<ul class="list-inline">
@@ -388,7 +460,7 @@
 						</ul>
 					</div> -->
 					<!-- Breadcrumb row END -->
-                </div>
+                <!-- </div> -->
             </div>
         </div>
         <!-- inner page banner END -->
@@ -439,41 +511,41 @@
                         <div class="p-a30 bg-gray clearfix radius-sm">
 							<h3>Send Message Us</h3>
 							<div class="dzFormMsg"></div>
-							<form method="post" class="dzForm" action="script/contact.php">
+							<form method="post" class="dzForm" action="contact.php">
 								<input type="hidden" value="Contact" name="dzToDo" >
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input name="dzName" type="text" required class="form-control" placeholder="Your Name">
+                                                <input name="name" id="name" type="text" required class="form-control" placeholder="Your Name">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="input-group"> 
-											    <input name="dzEmail" type="email" class="form-control" required  placeholder="Your Email Id" >
+											    <input name="email" id="email" type="email" class="form-control" required  placeholder="Your Email Id" >
                                             </div>
                                         </div>
                                     </div>
-									<div class="col-md-6">
+									<!-- <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <input name="dzOther[Phone]" type="text" required class="form-control" placeholder="Phone">
                                             </div>
                                         </div>
-                                    </div>
-									<div class="col-md-6">
+                                    </div> -->
+									<div class="col-md-12">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input name="dzOther[Subject]" type="text" required class="form-control" placeholder="Subject">
+                                                <input name="subject" id="subject" type="text" required class="form-control" placeholder="Subject">
                                             </div>
                                         </div>
                                     </div>
                                      <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <textarea name="dzMessage" rows="4" class="form-control" required placeholder="Your Message..."></textarea>
+                                                <textarea name="body" id="body" rows="4" class="form-control" required placeholder="Your Message..."></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -488,6 +560,7 @@
                                     <div class="col-md-12">
                                         <button name="submit" type="submit" value="Submit" class="site-button "> <span>Submit</span> </button>
                                     </div>
+									
                                 </div>
                             </form>
                         </div>
@@ -607,8 +680,10 @@
                     </div>
                     <div class="col-md-12 col-xl-4 col-lg-4 col-sm-6 footer-col-4 ">
                         <div class="widget">
-                            <h5 class="m-b30 text-white">Subscribe To Our Newsletter</h5>
-							<p class="text-capitalize m-b20">Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy text ever since the..</p>
+                            <h5 class="m-b30 text-white">Start your home project today!</h5>
+							<p class="text-capitalize m-b20" style="font-size: 15px;">Bringing your home back to life
+								with a classic and a modern touch.
+							</p>
                             <!-- <div class="subscribe-form m-b20">
 								<form class="dzSubscribe" action="script/mailchamp.php" method="post">
 									<div class="dzSubscribeMsg"></div>

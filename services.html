@@ -112,11 +112,81 @@
 						</button>
 						<!-- extra nav -->
 						<div class="extra-nav">
-							<!-- <div class="extra-cell">
-                            <button id="quik-search-btn" type="button" class="site-button-link"><i class="la la-search"></i></button>
-						</div> -->
 							<div class="dlab-topbar-right">
-								<a href="contact-1.html" class="site-button radius-no btnhover11">GET A QUOTE</a>
+								<!-- <a href="contact.html" class="site-button radius-no btnhover11">GET A QUOTE</a> -->
+								<a class="site-button radius-no btnhover11" data-toggle="modal"
+									data-target="#exampleModalCenter" style="color: white;">GET A QUOTE
+									<!-- <span class="button_label" onclick="buynow(7)" > </span> -->
+								</a>
+							</div>
+						</div>
+						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+							aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+							<div class="modal-dialog modal modal-dialog-centered" role="document">
+								<form id="contactform" method="post" action="contact.php">
+									<div class="modal-content">
+										<div class="modal-header">
+											<div class="column mcb-column one column_column">
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												<div class="p-a20">
+											<h1 style="text-align: center;">Get A Quote</h1>
+											<div class="dzFormMsg"></div>
+										</div>
+											</div>
+	
+										</div>
+										<input type="hidden" value="Contact" name="dzToDo">
+										<div class="modal-body">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="input-group">
+															<input name="dzName" type="text" required
+																class="form-control" placeholder="Your Name">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="input-group">
+															<input name="dzEmail" type="email" class="form-control"
+																required placeholder="Your Email Id">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														<div class="input-group">
+															<input input list="services"  name="dzOther" type="text"  required class="form-control" placeholder="Service"id="service" name="Services">
+															<datalist id="services">
+																<option value="Stucco & Stone">
+																<option value="Soffit Installation">
+																<option value="Hardie Installation">
+																<option value="All Kind of renovation">
+															</datalist>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														<div class="input-group">
+															<textarea name="dzMessage" rows="4" class="form-control"
+																required placeholder="Your Message..."></textarea>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer " style="border-top:none !important">
+											<button class="site-button radius-no btnhover11" type="submit"
+												style="color: white;"><span class="button_label">Send
+													Enquiry</span></button>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 						<!-- Quik search -->
@@ -384,8 +454,9 @@
 		<div class="page-content bg-white">
 			<!-- inner page banner -->
 			<div class="dlab-bnr-inr overlay-black-middle bg-pt"
-				style="background-image:url(assets/images/banner/bnr1.jpg);">
-				<div class="container">
+				style="background-image:url(assets/images/banner/Services-page.jpg); height: 500px; background-size: cover;background-repeat: no-repeat;background-position: center;">
+				<div class="container align-items-center">
+					<h1 style="margin-top: 210px; padding-left: 50px; font-size: 90px; color: #d2151e; font-family:'Times New Roman', Times, serif;">Services</h1>
 					<!-- <div class="dlab-bnr-inr-entry">
                     <h1 class="text-white">Services 1</h1>
 					Breadcrumb row
@@ -427,11 +498,10 @@
 											</div>
 											<div class="icon-content">
 												<h2 class="dlab-tilte">Stucco & Stone</h2>
-												<p style="font-size:smaller;">Stucco is a decorative coating for
-													exterior walls. A cement plaster that is
-													applied wet and hardens to a strong finish, it can be used to cover
-													less
-													attractive construction materials such as cinder block.</p>
+												<p style="font-size:smaller;">Stucco is applied wet and hardens to a
+													very dense solid. It is used as a decorative coating for walls and
+													ceilings, exterior walls, and as a sculptural and artistic material
+													in architecture.</p>
 											</div>
 										</div>
 									</div>
@@ -445,9 +515,9 @@
 											</div>
 											<div class="icon-content">
 												<h2 class="dlab-tilte">Soffit installation </h2>
-												<p style="font-size:smaller;">A soffit is an exterior or interior
-													architectural feature, generally the
-													horizontal, aloft underside of any construction element.<br><br><br>
+												<p style="font-size:smaller;">Soffit is used to enclose the underside of
+													an eave. The installation of the soffit will determine the
+													positioning of the inside and outside corner posts. <br>
 												</p>
 											</div>
 										</div>
@@ -462,8 +532,11 @@
 											</div>
 											<div class="icon-content">
 												<h2 class="dlab-tilte">Hardie installing </h2>
-												<p>Hardie Board siding is a super durable siding product that looks amazing, is
-													long-lasting, and comes with a fabulous warranty.</p>
+												<p style="font-size:smaller;">Hardie Board siding is a super durable siding product that looks
+													amazing, is long-lasting, and comes with a fabulous warranty. It's
+													made of cement, sand, and cellulose fibers which combine to create
+													an outstanding material to both protect and beautify homes.
+												</p>
 											</div>
 										</div>
 									</div>
@@ -477,8 +550,9 @@
 											</div>
 											<div class="icon-content">
 												<h2 class="dlab-tilte">All kind &amp; of renovations</h2>
-												<p>Renovation is the process of repairing or replacing a structure that is broken,
-													damaged, or old.<br><br> </p>
+												<p style="font-size:smaller;">Take a step into modern designs with something new, or by bringing
+													something back to life and apply it in social contexts with the best
+													renovation.<br><br><br> </p>
 											</div>
 										</div>
 									</div>
@@ -508,21 +582,22 @@
 							</div>
 							<div class="col-lg-4 col-md-12">
 								<div class="sticky-top m-b30">
-									<form class="inquiry-form inner">
+									<form class="inquiry-form inner" method="post" action="contact.php">
 										<h3 class="title m-t0 m-b10">Let's Convert Your Idea into Reality</h3>
-										<p>We strive to give you the best service. Contact us today and start crafting your dreams into reality.</p>
+										<p>We strive to give you the best service. Contact us today and start crafting
+											your dreams into reality.</p>
 										<div class="row">
 											<div class="col-lg-6 col-md-6 col-sm-6">
 												<div class="form-group">
 													<div class="input-group">
 														<span class="input-group-addon"><i
 																class="ti-user text-primary"></i></span>
-														<input name="dzName" type="text" required class="form-control"
+														<input name="name" id="name" type="text" required class="form-control"
 															placeholder="First Name">
 													</div>
 												</div>
 											</div>
-											<div class="col-lg-6 col-md-6 col-sm-6">
+											<!-- <div class="col-lg-6 col-md-6 col-sm-6">
 												<div class="form-group">
 													<div class="input-group">
 														<span class="input-group-addon"><i
@@ -531,14 +606,24 @@
 															class="form-control" placeholder="Phone">
 													</div>
 												</div>
+											</div> -->
+											<div class="col-lg-6 col-md-6 col-sm-6">
+												<div class="form-group">
+													<div class="input-group">
+														<span class="input-group-addon"><i
+																class="ti-email text-primary"></i></span>
+														<input name="email" id="email" type="text" required
+															class="form-control" placeholder="Your Email Id">
+													</div>
+												</div>
 											</div>
 											<div class="col-lg-12 col-md-12 col-sm-12">
 												<div class="form-group">
 													<div class="input-group">
 														<span class="input-group-addon"><i
-																class="ti-email text-primary"></i></span>
-														<input name="dzEmail" type="email" class="form-control" required
-															placeholder="Your Email Id">
+																class="ti-more text-primary"></i></span>
+														<input name="subject" id="subject" type="text" class="form-control" required
+															placeholder="Service">
 													</div>
 												</div>
 											</div>
@@ -563,7 +648,7 @@
 													<div class="input-group">
 														<span class="input-group-addon"><i
 																class="ti-agenda text-primary"></i></span>
-														<textarea name="dzMessage" rows="2" class="form-control"
+														<textarea name="body" id="body" rows="2" class="form-control"
 															required
 															placeholder="Tell us about your project or idea"></textarea>
 													</div>
@@ -587,27 +672,27 @@
 					style="background-image:url(images/background/bg1.jpg);">
 					<div class="container">
 						<div class="section-head text-white text-center">
-							<h2 class="title-box m-tb0 max-w800 m-auto">Amazing things happen to your business when we
-								connect those dots of utility and value <span class="bg-primary"></span></h2>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-								piece of classical Latin literature from 45 BC, making it over</p>
+							<h2 class="title-box m-tb0 max-w800 m-auto">Our Completed Projects <span class="bg-primary"></span></h2>
+							<p>We take care of your house so you can emphasize your home.  A house provides protection, security, and peace of mind for you and your loved ones.</p>
 						</div>
 					</div>
 					<div class="container">
 						<div class="row text-white">
-							<div class="col-lg-4 col-md-4 m-b30">
-								<div class="icon-bx-wraper bx-style-1 p-a30 center">
+							<div class="col-lg-3 col-md-3 m-b30">
+								<!-- <div class="icon-bx-wraper bx-style-1 p-a30 center">
 									<div class="icon-lg text-white m-b20"> <a href="javascript:void(0);"
 											class="icon-cell text-white"><i class="flaticon-factory"></i></a> </div>
 									<div class="icon-content">
 										<h5 class="dlab-tilte text-uppercase">Mechanical Works</h5>
 										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
 											nibh euismod..</p>
+											
 									</div>
-								</div>
+								</div> -->
+								<img src="assets/images/portfolio/image_1.jpg">
 							</div>
-							<div class="col-lg-4 col-md-4 m-b30">
-								<div class="icon-bx-wraper bx-style-1 p-a30 center">
+							<div class="col-lg-3 col-md-3 m-b30">
+								<!-- <div class="icon-bx-wraper bx-style-1 p-a30 center">
 									<div class="icon-lg text-white m-b20"> <a href="javascript:void(0);"
 											class="icon-cell text-white"><i class="flaticon-engineer"></i></a> </div>
 									<div class="icon-content">
@@ -615,10 +700,11 @@
 										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
 											nibh euismod..</p>
 									</div>
-								</div>
+								</div> -->
+								<img src="assets/images/portfolio/image_1.jpg">
 							</div>
-							<div class="col-lg-4 col-md-4 m-b30">
-								<div class="icon-bx-wraper bx-style-1 p-a30 center">
+							<div class="col-lg-3 col-md-3 m-b30">
+								<!-- <div class="icon-bx-wraper bx-style-1 p-a30 center">
 									<div class="icon-lg text-white m-b20"> <a href="javascript:void(0);"
 											class="icon-cell text-white"><i class="flaticon-factory-1"></i></a> </div>
 									<div class="icon-content">
@@ -626,7 +712,21 @@
 										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
 											nibh euismod..</p>
 									</div>
-								</div>
+								</div> -->
+								<img src="assets/images/portfolio/image_1.jpg">
+							</div>
+							<div class="col-lg-3 col-md-3 m-b30">
+								<!-- <div class="icon-bx-wraper bx-style-1 p-a30 center">
+									<div class="icon-lg text-white m-b20"> <a href="javascript:void(0);"
+											class="icon-cell text-white"><i class="flaticon-factory"></i></a> </div>
+									<div class="icon-content">
+										<h5 class="dlab-tilte text-uppercase">Mechanical Works</h5>
+										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+											nibh euismod..</p>
+											
+									</div>
+								</div> -->
+								<img src="assets/images/portfolio/image_1.jpg">
 							</div>
 						</div>
 					</div>
@@ -847,20 +947,20 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3 col-5 col-xl-2 col-lg-2 col-sm-6 footer-col-4">
-						<div class="widget widget_services border-0">
-							<h5 class="m-b30 text-white">Links</h5>
-							<ul>
-								<li><a href="services.html">Our Services</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
-								<li><a href="about.html">About Us </a></li>
-								<li><a href="contact.html">Contact Us</a></li>
-								
-							</ul>
+							<div class="widget widget_services border-0">
+								<h5 class="m-b30 text-white">Links</h5>
+								<ul>
+									<li><a href="services.html">Our Services</a></li>
+									<li><a href="gallery.html">Gallery</a></li>
+									<li><a href="about.html">About Us </a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+
+								</ul>
+							</div>
 						</div>
-					</div>
 						<div class="col-md-3 col-7 col-xl-2 col-lg-3 col-sm-6 footer-col-4">
-						<div class="widget widget_services border-0">
-							<!-- <h5 class="m-b30 text-white">Useful Link</h5>
+							<div class="widget widget_services border-0">
+								<!-- <h5 class="m-b30 text-white">Useful Link</h5>
 							<ul>
 								<li><a href="contact.html">Contact Us</a></li>
 								<li><a href="services.html">Our Services</a></li>
@@ -870,8 +970,8 @@
 							<li><a href="about-1.html">Portfolio</a></li>
 							<li><a href="services-2.html">Client Management</a></li>
 							</ul> -->
+							</div>
 						</div>
-					</div>
 						<div class="col-md-12 col-xl-4 col-lg-3 col-sm-6 footer-col-4">
 							<div class="widget widget_getintuch">
 								<h5 class="m-b30 text-white ">Contact us</h5>
@@ -891,10 +991,10 @@
 						</div>
 						<div class="col-md-12 col-xl-4 col-lg-4 col-sm-6 footer-col-4 ">
 							<div class="widget">
-								<h5 class="m-b30 text-white">Subscribe To Our Newsletter</h5>
-								<p class="text-capitalize m-b20">Lorem Ipsum is simply dummy text of the printing and
-									typesetting industry has been the industry's standard dummy text ever since the..
-								</p>
+								<h5 class="m-b30 text-white">Start your home project today!</h5>
+							<p class="text-capitalize m-b20" style="font-size: 15px;">Bringing your home back to life
+								with a classic and a modern touch.
+							</p>
 								<!-- <div class="subscribe-form m-b20">
 								<form class="dzSubscribe" action="script/mailchamp.php" method="post">
 									<div class="dzSubscribeMsg"></div>

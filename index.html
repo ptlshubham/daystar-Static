@@ -37,6 +37,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
 	<link class="skin" rel="stylesheet" type="text/css" href="assets/css/skin/skin-2.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/templete.min.css">
+
 	<!-- Google Font -->
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i|Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
@@ -118,9 +119,154 @@
 						<div class="extra-nav">
 							<!-- <div class="extra-cell">
                             <button id="quik-search-btn" type="button" class="site-button-link"><i class="la la-search"></i></button>
-						</div> -->
+							</div> -->
 							<div class="dlab-topbar-right">
-								<a href="contact-1.html" class="site-button radius-no btnhover11">GET A QUOTE</a>
+								<!-- <a href="contact.html" class="site-button radius-no btnhover11">GET A QUOTE</a> -->
+								<a class="site-button radius-no btnhover11" data-toggle="modal"
+									data-target="#exampleModalCenter" style="color: white;">GET A QUOTE
+									<!-- <span class="button_label" onclick="buynow(7)" > </span> -->
+								</a>
+							</div>
+						</div>
+						<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+							aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+							<div class="modal-dialog modal modal-dialog-centered" role="document">
+								<form id="contactform" method="post" action="contact.php">
+									<div class="modal-content">
+										<div class="modal-header">
+											<div class="column mcb-column one column_column">
+												<button type="button" class="close" data-dismiss="modal"
+													aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												<div class="p-a20">
+													<h1 style="text-align: center;">Get A Quote</h1>
+													<div class="dzFormMsg"></div>
+												</div>
+											</div>
+
+										</div>
+										<input type="hidden" value="Contact" name="dzToDo">
+										<div class="modal-body">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="input-group">
+															<input name="dzName" type="text" required
+																class="form-control" placeholder="Your Name">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<div class="input-group">
+															<input name="dzEmail" type="email" class="form-control"
+																required placeholder="Your Email Id">
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														<div class="input-group">
+															<input input list="services" name="dzOther" type="text"
+																required class="form-control" placeholder="Service"
+																id="service" name="Services">
+															<!-- <select id="service" class="form-control" name="Services">
+																<option value="Stucoo&Stone">services</option>
+																<option value="saab">Stucoo & Stone</option>
+																<option value="saab">Saab</option>
+																<option value="fiat">Fiat</option>
+																<option value="audi">Audi</option>
+															  </select> -->
+															<!-- <input list="services" name="service"> -->
+															<datalist id="services">
+																<option value="Stucco & Stone">
+																<option value="Soffit Installation">
+																<option value="Hardie Installation">
+																<option value="All Kind of renovation">
+															</datalist>
+														</div>
+													</div>
+												</div>
+												<!-- <div class="col-md-6">
+													<div class="form-group">
+														<div class="input-group">
+															<input name="dzOther[Subject]" type="text" required class="form-control" placeholder="Subject">
+														</div>
+													</div>
+												</div> -->
+												<div class="col-md-12">
+													<div class="form-group">
+														<div class="input-group">
+															<textarea name="dzMessage" rows="4" class="form-control"
+																required placeholder="Your Message..."></textarea>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<!-- <div class="form-group">
+														<div class="input-group">
+															<div class="g-recaptcha" data-sitekey="6LefsVUUAAAAADBPsLZzsNnETChealv6PYGzv3ZN" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+															<input class="form-control d-none" style="display:none;" data-recaptcha="true" required data-error="Please complete the Captcha">
+														</div>
+													</div> -->
+												</div>
+												<!-- <div class="col-md-12">
+													<button name="submit" type="submit" value="Submit" class="site-button "> <span>Submit</span> </button>
+												</div> -->
+											</div>
+										</div>
+										<!-- <script type="text/javascript">
+                                            function buynow(val) {
+
+                                                if (val == 1) {
+                                                    var sel = document.getElementById('selval1').textContent ;
+                                                    document.getElementById('subject').value = sel;
+                                                    document.getElementById('quantity').value=1;
+                                                }
+                                                else if (val == 2) {
+                                                    var sel = document.getElementById('selval2').textContent;
+                                                    document.getElementById('subject').value = sel;
+                                                    document.getElementById('quantity').value=1;
+                                                }
+                                                else if (val == 3) {
+                                                    var sel = document.getElementById('selval3').textContent;
+                                                    document.getElementById('subject').value = sel;
+                                                    document.getElementById('quantity').value=1;
+                                                }
+                                                else if (val == 4) {
+                                                    var sel = document.getElementById('selval4').textContent;
+                                                    document.getElementById('subject').value = sel;
+                                                    document.getElementById('quantity').value=1;
+                                                }
+                                                else if (val == 5) {
+                                                    var sel = document.getElementById('selval5').textContent;
+                                                    document.getElementById('subject').value = sel;
+                                                    document.getElementById('quantity').value=1;
+                                                }
+                                                else if (val == 6) {
+                                                    var sel = document.getElementById('selval6').textContent;
+                                                    document.getElementById('subject').value = sel;
+                                                    document.getElementById('quantity').value=1;
+                                                }
+                                                else {
+                                                    var sel = document.getElementById('selval7').textContent;
+                                                    document.getElementById('subject').value = sel;
+                                                    document.getElementById('quantity').value=1;
+                                                }
+
+                                            }
+                                        </script> -->
+										<div class="modal-footer " style="border-top:none !important">
+											<!-- <button class="button button_size_2 button_js" style="color: white;"
+                                                data-dismiss="modal"><span class="button_label">Close</span></button> -->
+											<button class="site-button radius-no btnhover11" type="submit"
+												style="color: white;"><span class="button_label">Send
+													Enquiry</span></button>
+
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 						<!-- Quik search -->
@@ -387,559 +533,522 @@
 
 		<!-- Content -->
 		<!-- <div class="page-content bg-white"> -->
-			<!-- Slider -->
-			<div class="main-slider style-two default-banner" id="home">
-				<div class="tp-banner-container">
-					<div class="tp-banner">
-						<div id="rev_slider_1077_1_wrapper" class="rev_slider_wrapper fullscreen-container"
-							data-alias="scroll-effect136" data-source="gallery"
-							style="background-color:#111111;padding:0px;">
-							<!-- START REVOLUTION SLIDER 5.3.0.2 fullscreen mode -->
-							<div id="rev_slider_1077_1" class="rev_slider fullscreenbanner" style="display:none;"
-								data-version="5.3.0.2">
-								<ul>
-									<!-- SLIDE  -->
-									<li data-index="rs-3042" data-transition="slideoverhorizontal"
-										data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"
-										data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
-										data-masterspeed="1000" data-thumb="assets/images/main-slider/slide4.jpg"
-										data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500"
-										data-fsslotamount="7" data-saveperformance="off" data-title="Stucco & Stone"
-										data-param1="" data-param2="" data-param3="" data-param4="" data-param5=""
-										data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
-										data-description="">
-										<!-- MAIN IMAGE -->
-										<img src="assets/images/main-slider/slide4.jpg" data-bgposition="center center"
-											data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone"
-											data-scalestart="100" data-scaleend="110" data-rotatestart="0"
-											data-rotateend="0" data-offsetstart="0 200" data-offsetend="0 -200" alt=""
-											data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-										<div class="tp-caption tp-shape tp-shapewrapper " id="slide-100-layer"
-											data-x="['center','center','center','center']"
-											data-hoffset="['0','0','0','0']"
-											data-y="['middle','middle','middle','middle']"
-											data-voffset="['0','0','0','0']" data-width="full" data-height="full"
-											data-whitespace="nowrap" data-type="shape" data-basealign="slide"
-											data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url(assets/images/overlay/rrdiagonal-line.png)">
-										</div>
-										<!-- LAYER NR. 1 -->
-										<div class="tp-caption tp-shape tp-shapewrapper  " id="slide-3042-layer-11"
-											data-x="['center','center','center','center']"
-											data-hoffset="['0','0','0','0']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['0','0','0','0']" data-width="full"
-											data-height="['400','400','400','550']" data-whitespace="nowrap"
-											data-type="shape" data-basealign="slide" data-responsive_offset="off"
-											data-responsive="off"
-											data-frames='[{"from":"opacity:0;","speed":1500,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 5;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 0);border-width:0px;background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;">
-										</div>
-										<!-- LAYER NR. 2 -->
-										<div class="tp-caption BigBold-Title tp-resizeme" id="slide-3042-layer-1"
-											data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['110','110','155','160']"
-											data-fontsize="['110','100','70','50']"
-											data-lineheight="['100','90','60','60']"
-											data-width="['none','none','none','400']" data-height="none"
-											data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text"
-											data-basealign="slide" data-responsive_offset="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]"
-											data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
-											style="z-index: 6; white-space: nowrap;">Stucco & Stone
-										</div>
-										<!-- LAYER NR. 3 -->
-										<div class="tp-caption BigBold-SubTitle  " id="slide-3042-layer-4"
-											data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['40','1','50','58']" data-fontsize="['15','15','15','13']"
-											data-lineheight="['24','24','24','20']"
-											data-width="['410','410','410','280']"
-											data-height="['60','100','100','100']" data-whitespace="normal"
-											data-type="text" data-basealign="slide" data-responsive_offset="off"
-											data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">
-											<!-- Industry is ready to help you in making unique-looking and best website in a moment. -->
-										</div>
-										<!-- LAYER NR. 4 -->
-										<div class="tp-caption BigBold-Button rev-btn " id="slide-3042-layer-7"
-											data-x="['left','left','left','left']"
-											data-hoffset="['480','480','30','20']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['50','50','30','20']" data-width="none" data-height="none"
-											data-whitespace="nowrap" data-type="button"
-											data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]'
-											data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[15,15,15,15]" data-paddingright="[50,50,50,50]"
-											data-paddingbottom="[15,15,15,15]" data-paddingleft="[50,50,50,50]"
-											style="z-index: 8; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-											<a href="stucco&stone.html"><span style="color: white;">READ MORE</span>
-											</a>
-										</div>
-										<!-- LAYER NR. 5 -->
-										<div class="tp-caption BigBold-Button rev-btn " id="slide-3042-layer-12"
-											data-x="['left','left','left','left']"
-											data-hoffset="['676','676','226','216']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['50','50','30','20']" data-width="none" data-height="none"
-											data-whitespace="nowrap" data-type="button"
-											data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
-											data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[15,15,15,15]" data-paddingright="[20,20,20,20]"
-											data-paddingbottom="[15,15,15,15]" data-paddingleft="[20,20,20,20]"
-											style="z-index: 9; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-											<i class="fa fa-chevron-right"></i>
-										</div>
-									</li>
-									<!-- SLIDE  -->
-									<li data-index="rs-3043" data-transition="slideoverhorizontal"
-										data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"
-										data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
-										data-masterspeed="1000" data-thumb="assets/images/main-slider/slide5.jpg"
-										data-rotate="0" data-saveperformance="off" data-title="Soffit installation  "
-										data-param1="" data-param2="" data-param3="" data-param4="" data-param5=""
-										data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
-										data-description="">
-										<!-- MAIN IMAGE -->
-										<img src="assets/images/main-slider/slide5.jpg" data-bgposition="center center"
-											data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone"
-											data-scalestart="100" data-scaleend="110" data-rotatestart="0"
-											data-rotateend="0" data-offsetstart="-500 0" data-offsetend="500 0" alt=""
-											data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-										<div class="tp-caption tp-shape tp-shapewrapper " id="slide-200-layer"
-											data-x="['center','center','center','center']"
-											data-hoffset="['0','0','0','0']"
-											data-y="['middle','middle','middle','middle']"
-											data-voffset="['0','0','0','0']" data-width="full" data-height="full"
-											data-whitespace="nowrap" data-type="shape" data-basealign="slide"
-											data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url(assets/images/overlay/rrdiagonal-line.png)">
-										</div>
-										<!-- LAYER NR. 6 -->
-										<div class="tp-caption tp-shape tp-shapewrapper" id="slide-3043-layer-11"
-											data-x="['center','center','center','center']"
-											data-hoffset="['0','0','0','0']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['0','0','0','0']" data-width="full"
-											data-height="['400','400','400','550']" data-whitespace="nowrap"
-											data-type="shape" data-basealign="slide" data-responsive_offset="off"
-											data-responsive="off"
-											data-frames='[{"from":"opacity:0;","speed":1500,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 10;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 0);border-width:0px;background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;">
-										</div>
-										<!-- LAYER NR. 7 -->
-										<div class="tp-caption BigBold-Title   tp-resizeme" id="slide-3043-layer-1"
-											data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['110','110','155','160']"
-											data-fontsize="['110','100','70','50']"
-											data-lineheight="['100','90','60','60']"
-											data-width="['none','none','none','400']" data-height="none"
-											data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text"
-											data-basealign="slide" data-responsive_offset="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]"
-											data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
-											style="z-index: 11; white-space: nowrap;">Soffit installation
-										</div>
-										<!-- LAYER NR. 8 -->
-										<div class="tp-caption BigBold-SubTitle  " id="slide-3043-layer-4"
-											data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['40','1','50','58']" data-fontsize="['15','15','15','13']"
-											data-lineheight="['24','24','24','20']"
-											data-width="['410','410','410','280']"
-											data-height="['60','100','100','100']" data-whitespace="normal"
-											data-type="text" data-basealign="slide" data-responsive_offset="off"
-											data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 12; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">
-											<!-- Industry is ready to help you in making unique-looking and best website in a moment. -->
-										</div>
-										<!-- LAYER NR. 9 -->
-										<div class="tp-caption BigBold-Button rev-btn " id="slide-3043-layer-7"
-											data-x="['left','left','left','left']"
-											data-hoffset="['480','480','30','20']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['50','50','30','20']" data-width="none" data-height="none"
-											data-whitespace="nowrap" data-type="button"
-											data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]'
-											data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[15,15,15,15]" data-paddingright="[50,50,50,50]"
-											data-paddingbottom="[15,15,15,15]" data-paddingleft="[50,50,50,50]"
-											style="z-index: 13; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-											<a href="soffit-installation.html"><span style="color: white;">READ
-													MORE</span> </a>
-										</div>
-										<!-- LAYER NR. 10 -->
-										<div class="tp-caption BigBold-Button rev-btn " id="slide-3043-layer-12"
-											data-x="['left','left','left','left']"
-											data-hoffset="['676','676','226','216']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['50','50','30','20']" data-width="none" data-height="none"
-											data-whitespace="nowrap" data-type="button"
-											data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
-											data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[15,15,15,15]" data-paddingright="[20,20,20,20]"
-											data-paddingbottom="[15,15,15,15]" data-paddingleft="[20,20,20,20]"
-											style="z-index: 14; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-											<i class="fa fa-chevron-right"></i>
-										</div>
-									</li>
-									<li data-index="rs-3044" data-transition="slideoverhorizontal"
-										data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"
-										data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
-										data-masterspeed="1000" data-thumb="assets/images/main-slider/slide5.jpg"
-										data-rotate="0" data-saveperformance="off" data-title="Hardie installing  "
-										data-param1="" data-param2="" data-param3="" data-param4="" data-param5=""
-										data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
-										data-description="">
-										<!-- MAIN IMAGE -->
-										<img src="assets/images/main-slider/slide5.jpg" data-bgposition="center center"
-											data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone"
-											data-scalestart="100" data-scaleend="110" data-rotatestart="0"
-											data-rotateend="0" data-offsetstart="-500 0" data-offsetend="500 0" alt=""
-											data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-										<div class="tp-caption tp-shape tp-shapewrapper " id="slide-200-layer"
-											data-x="['center','center','center','center']"
-											data-hoffset="['0','0','0','0']"
-											data-y="['middle','middle','middle','middle']"
-											data-voffset="['0','0','0','0']" data-width="full" data-height="full"
-											data-whitespace="nowrap" data-type="shape" data-basealign="slide"
-											data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url(assets/images/overlay/rrdiagonal-line.png)">
-										</div>
-										<!-- LAYER NR. 6 -->
-										<div class="tp-caption tp-shape tp-shapewrapper" id="slide-3044-layer-11"
-											data-x="['center','center','center','center']"
-											data-hoffset="['0','0','0','0']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['0','0','0','0']" data-width="full"
-											data-height="['400','400','400','550']" data-whitespace="nowrap"
-											data-type="shape" data-basealign="slide" data-responsive_offset="off"
-											data-responsive="off"
-											data-frames='[{"from":"opacity:0;","speed":1500,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 10;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 0);border-width:0px;background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;">
-										</div>
-										<!-- LAYER NR. 7 -->
-										<div class="tp-caption BigBold-Title   tp-resizeme" id="slide-3044-layer-1"
-											data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['110','110','155','160']"
-											data-fontsize="['110','100','70','50']"
-											data-lineheight="['100','90','60','60']"
-											data-width="['none','none','none','400']" data-height="none"
-											data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text"
-											data-basealign="slide" data-responsive_offset="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]"
-											data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
-											style="z-index: 11; white-space: nowrap;">Hardie installing
-										</div>
-										<!-- LAYER NR. 8 -->
-										<div class="tp-caption BigBold-SubTitle  " id="slide-3044-layer-4"
-											data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['40','1','50','58']" data-fontsize="['15','15','15','13']"
-											data-lineheight="['24','24','24','20']"
-											data-width="['410','410','410','280']"
-											data-height="['60','100','100','100']" data-whitespace="normal"
-											data-type="text" data-basealign="slide" data-responsive_offset="off"
-											data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 12; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">
-											<!-- Industry is ready to help you in making unique-looking and best website in a moment. -->
-											
-										</div>
-										<!-- LAYER NR. 9 -->
-										<div class="tp-caption BigBold-Button rev-btn " id="slide-3044-layer-7"
-											data-x="['left','left','left','left']"
-											data-hoffset="['480','480','30','20']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['50','50','30','20']" data-width="none" data-height="none"
-											data-whitespace="nowrap" data-type="button"
-											data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]'
-											data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[15,15,15,15]" data-paddingright="[50,50,50,50]"
-											data-paddingbottom="[15,15,15,15]" data-paddingleft="[50,50,50,50]"
-											style="z-index: 13; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-											<a href="hardie-installing.html"><span style="color: white;">READ
-													MORE</span> </a>
-										</div>
-										<!-- LAYER NR. 10 -->
-										<div class="tp-caption BigBold-Button rev-btn " id="slide-3044-layer-12"
-											data-x="['left','left','left','left']"
-											data-hoffset="['676','676','226','216']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['50','50','30','20']" data-width="none" data-height="none"
-											data-whitespace="nowrap" data-type="button"
-											data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
-											data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[15,15,15,15]" data-paddingright="[20,20,20,20]"
-											data-paddingbottom="[15,15,15,15]" data-paddingleft="[20,20,20,20]"
-											style="z-index: 14; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-											<i class="fa fa-chevron-right"></i>
-										</div>
-									</li>
-									<li data-index="rs-3045" data-transition="slideoverhorizontal"
-										data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"
-										data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
-										data-masterspeed="1000" data-thumb="assets/images/main-slider/slide5.jpg"
-										data-rotate="0" data-saveperformance="off" data-title="All kind of renovations "
-										data-param1="" data-param2="" data-param3="" data-param4="" data-param5=""
-										data-param6="" data-param7="" data-param8="" data-param9="" data-param10=""
-										data-description="">
-										<!-- MAIN IMAGE -->
-										<img src="assets/images/main-slider/slide5.jpg" data-bgposition="center center"
-											data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone"
-											data-scalestart="100" data-scaleend="110" data-rotatestart="0"
-											data-rotateend="0" data-offsetstart="-500 0" data-offsetend="500 0" alt=""
-											data-bgparallax="10" class="rev-slidebg" data-no-retina="">
-										<div class="tp-caption tp-shape tp-shapewrapper " id="slide-200-layer"
-											data-x="['center','center','center','center']"
-											data-hoffset="['0','0','0','0']"
-											data-y="['middle','middle','middle','middle']"
-											data-voffset="['0','0','0','0']" data-width="full" data-height="full"
-											data-whitespace="nowrap" data-type="shape" data-basealign="slide"
-											data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url(assets/images/overlay/rrdiagonal-line.png)">
-										</div>
-										<!-- LAYER NR. 6 -->
-										<div class="tp-caption tp-shape tp-shapewrapper" id="slide-3045-layer-11"
-											data-x="['center','center','center','center']"
-											data-hoffset="['0','0','0','0']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['0','0','0','0']" data-width="full"
-											data-height="['400','400','400','550']" data-whitespace="nowrap"
-											data-type="shape" data-basealign="slide" data-responsive_offset="off"
-											data-responsive="off"
-											data-frames='[{"from":"opacity:0;","speed":1500,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 10;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 0);border-width:0px;background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;">
-										</div>
-										<!-- LAYER NR. 7 -->
-										<div class="tp-caption BigBold-Title   tp-resizeme" id="slide-3045-layer-1"
-											data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['110','110','155','160']"
-											data-fontsize="['110','100','70','50']"
-											data-lineheight="['100','90','60','60']"
-											data-width="['none','none','none','400']" data-height="none"
-											data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text"
-											data-basealign="slide" data-responsive_offset="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[10,10,10,10]" data-paddingright="[0,0,0,0]"
-											data-paddingbottom="[10,10,10,10]" data-paddingleft="[0,0,0,0]"
-											style="z-index: 11; white-space: nowrap;">All kind of renovations
-										</div>
-										<!-- LAYER NR. 8 -->
-										<div class="tp-caption BigBold-SubTitle  " id="slide-3045-layer-4"
-											data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['40','1','50','58']" data-fontsize="['15','15','15','13']"
-											data-lineheight="['24','24','24','20']"
-											data-width="['410','410','410','280']"
-											data-height="['60','100','100','100']" data-whitespace="normal"
-											data-type="text" data-basealign="slide" data-responsive_offset="off"
-											data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
-											data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
-											data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
-											data-paddingleft="[0,0,0,0]"
-											style="z-index: 12; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">
-											<!-- Industry is ready to help you in making unique-looking and best website in a moment. -->
-										</div>
-										<!-- LAYER NR. 9 -->
-										<div class="tp-caption BigBold-Button rev-btn " id="slide-3045-layer-7"
-											data-x="['left','left','left','left']"
-											data-hoffset="['480','480','30','20']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['50','50','30','20']" data-width="none" data-height="none"
-											data-whitespace="nowrap" data-type="button"
-											data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]'
-											data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[15,15,15,15]" data-paddingright="[50,50,50,50]"
-											data-paddingbottom="[15,15,15,15]" data-paddingleft="[50,50,50,50]"
-											style="z-index: 13; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-											READ MORE
-										</div>
-										<!-- LAYER NR. 10 -->
-										<div class="tp-caption BigBold-Button rev-btn " id="slide-3045-layer-12"
-											data-x="['left','left','left','left']"
-											data-hoffset="['676','676','226','216']"
-											data-y="['bottom','bottom','bottom','bottom']"
-											data-voffset="['50','50','30','20']" data-width="none" data-height="none"
-											data-whitespace="nowrap" data-type="button"
-											data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
-											data-basealign="slide" data-responsive_offset="off" data-responsive="off"
-											data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
-											data-textAlign="['left','left','left','left']"
-											data-paddingtop="[15,15,15,15]" data-paddingright="[20,20,20,20]"
-											data-paddingbottom="[15,15,15,15]" data-paddingleft="[20,20,20,20]"
-											style="z-index: 14; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
-											<i class="fa fa-chevron-right"></i>
-										</div>
-									</li>
-									<!-- SLIDE  -->
-								</ul>
-								<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-							</div>
+		<!-- Slider -->
+		<div class="main-slider style-two default-banner" id="home">
+			<div class="tp-banner-container">
+				<div class="tp-banner">
+					<div id="rev_slider_1077_1_wrapper" class="rev_slider_wrapper fullscreen-container"
+						data-alias="scroll-effect136" data-source="gallery"
+						style="background-color:#111111;padding:0px;">
+						<!-- START REVOLUTION SLIDER 5.3.0.2 fullscreen mode -->
+						<div id="rev_slider_1077_1" class="rev_slider fullscreenbanner" style="display:none;"
+							data-version="5.3.0.2">
+							<ul>
+								<!-- SLIDE  -->
+								<li data-index="rs-3042" data-transition="slideoverhorizontal" data-slotamount="default"
+									data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut"
+									data-easeout="Power4.easeInOut" data-masterspeed="1000"
+									data-thumb="assets/images/main-slider/slide4.jpg" data-rotate="0"
+									data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
+									data-saveperformance="off" data-title="Stucco & Stone" data-param1="" data-param2=""
+									data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+									data-param8="" data-param9="" data-param10="" data-description="">
+									<!-- MAIN IMAGE -->
+									<img src="assets/images/main-slider/stucco and Stone.jpg"
+										data-bgposition="center center" data-kenburns="on" data-duration="10000"
+										data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="110"
+										data-rotatestart="0" data-rotateend="0" data-offsetstart="0 200"
+										data-offsetend="0 -200" alt="" data-bgparallax="10" class="rev-slidebg"
+										data-no-retina="">
+									<div class="tp-caption tp-shape tp-shapewrapper " id="slide-100-layer"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+										data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape"
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url(assets/images/overlay/rrdiagonal-line.png)">
+									</div>
+									<!-- LAYER NR. 1 -->
+									<div class="tp-caption tp-shape tp-shapewrapper  " id="slide-3042-layer-11"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']"
+										data-width="full" data-height="['400','400','400','550']"
+										data-whitespace="nowrap" data-type="shape" data-basealign="slide"
+										data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"opacity:0;","speed":1500,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 5;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 0);border-width:0px;background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;">
+									</div>
+									<!-- LAYER NR. 2 -->
+									<div class="tp-caption BigBold-Title tp-resizeme" id="slide-3042-layer-1"
+										data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['110','110','155','160']" data-fontsize="['110','100','70','50']"
+										data-lineheight="['100','90','60','60']"
+										data-width="['none','none','none','400']" data-height="none"
+										data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text"
+										data-basealign="slide" data-responsive_offset="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;","ease":"Power2.easeInOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]"
+										data-paddingleft="[0,0,0,0]" style="z-index: 6; white-space: nowrap;">Stucco &
+										Stone
+									</div>
+									<!-- LAYER NR. 3 -->
+									<div class="tp-caption BigBold-SubTitle  " id="slide-3042-layer-4"
+										data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['40','1','50','58']" data-fontsize="['15','15','15','13']"
+										data-lineheight="['24','24','24','20']" data-width="['410','410','410','280']"
+										data-height="['60','100','100','100']" data-whitespace="normal" data-type="text"
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">
+										<!-- Industry is ready to help you in making unique-looking and best website in a moment. -->
+									</div>
+									<!-- LAYER NR. 4 -->
+									<div class="tp-caption BigBold-Button rev-btn " id="slide-3042-layer-7"
+										data-x="['left','left','left','left']" data-hoffset="['480','480','30','20']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['50','50','30','20']" data-width="none" data-height="none"
+										data-whitespace="nowrap" data-type="button"
+										data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]'
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
+										data-paddingright="[50,50,50,50]" data-paddingbottom="[15,15,15,15]"
+										data-paddingleft="[50,50,50,50]"
+										style="z-index: 8; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+										<a href="stucco&stone.html"><span style="color: white;">READ MORE</span>
+										</a>
+									</div>
+									<!-- LAYER NR. 5 -->
+									<div class="tp-caption BigBold-Button rev-btn " id="slide-3042-layer-12"
+										data-x="['left','left','left','left']" data-hoffset="['676','676','226','216']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['50','50','30','20']" data-width="none" data-height="none"
+										data-whitespace="nowrap" data-type="button"
+										data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
+										data-paddingright="[20,20,20,20]" data-paddingbottom="[15,15,15,15]"
+										data-paddingleft="[20,20,20,20]"
+										style="z-index: 9; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+										<i class="fa fa-chevron-right"></i>
+									</div>
+								</li>
+								<!-- SLIDE  -->
+								<li data-index="rs-3043" data-transition="slideoverhorizontal" data-slotamount="default"
+									data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut"
+									data-easeout="Power4.easeInOut" data-masterspeed="1000"
+									data-thumb="assets/images/main-slider/slide5.jpg" data-rotate="0"
+									data-saveperformance="off" data-title="Soffit installation  " data-param1=""
+									data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+									data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+									<!-- MAIN IMAGE -->
+									<img src="assets/images/main-slider/Soffit.jpg" data-bgposition="center center"
+										data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone"
+										data-scalestart="100" data-scaleend="110" data-rotatestart="0"
+										data-rotateend="0" data-offsetstart="-500 0" data-offsetend="500 0" alt=""
+										data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+									<div class="tp-caption tp-shape tp-shapewrapper " id="slide-200-layer"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+										data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape"
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url(assets/images/overlay/rrdiagonal-line.png)">
+									</div>
+									<!-- LAYER NR. 6 -->
+									<div class="tp-caption tp-shape tp-shapewrapper" id="slide-3043-layer-11"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']"
+										data-width="full" data-height="['400','400','400','550']"
+										data-whitespace="nowrap" data-type="shape" data-basealign="slide"
+										data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"opacity:0;","speed":1500,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 10;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 0);border-width:0px;background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;">
+									</div>
+									<!-- LAYER NR. 7 -->
+									<div class="tp-caption BigBold-Title   tp-resizeme" id="slide-3043-layer-1"
+										data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['110','110','155','160']" data-fontsize="['110','100','70','50']"
+										data-lineheight="['100','90','60','60']"
+										data-width="['none','none','none','400']" data-height="none"
+										data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text"
+										data-basealign="slide" data-responsive_offset="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]"
+										data-paddingleft="[0,0,0,0]" style="z-index: 11; white-space: nowrap;">Soffit
+										installation
+									</div>
+									<!-- LAYER NR. 8 -->
+									<div class="tp-caption BigBold-SubTitle  " id="slide-3043-layer-4"
+										data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['40','1','50','58']" data-fontsize="['15','15','15','13']"
+										data-lineheight="['24','24','24','20']" data-width="['410','410','410','280']"
+										data-height="['60','100','100','100']" data-whitespace="normal" data-type="text"
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 12; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">
+										<!-- Industry is ready to help you in making unique-looking and best website in a moment. -->
+									</div>
+									<!-- LAYER NR. 9 -->
+									<div class="tp-caption BigBold-Button rev-btn " id="slide-3043-layer-7"
+										data-x="['left','left','left','left']" data-hoffset="['480','480','30','20']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['50','50','30','20']" data-width="none" data-height="none"
+										data-whitespace="nowrap" data-type="button"
+										data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]'
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
+										data-paddingright="[50,50,50,50]" data-paddingbottom="[15,15,15,15]"
+										data-paddingleft="[50,50,50,50]"
+										style="z-index: 13; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+										<a href="soffit-installation.html"><span style="color: white;">READ
+												MORE</span> </a>
+									</div>
+									<!-- LAYER NR. 10 -->
+									<div class="tp-caption BigBold-Button rev-btn " id="slide-3043-layer-12"
+										data-x="['left','left','left','left']" data-hoffset="['676','676','226','216']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['50','50','30','20']" data-width="none" data-height="none"
+										data-whitespace="nowrap" data-type="button"
+										data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
+										data-paddingright="[20,20,20,20]" data-paddingbottom="[15,15,15,15]"
+										data-paddingleft="[20,20,20,20]"
+										style="z-index: 14; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+										<i class="fa fa-chevron-right"></i>
+									</div>
+								</li>
+								<li data-index="rs-3044" data-transition="slideoverhorizontal" data-slotamount="default"
+									data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut"
+									data-easeout="Power4.easeInOut" data-masterspeed="1000"
+									data-thumb="assets/images/main-slider/slide5.jpg" data-rotate="0"
+									data-saveperformance="off" data-title="Hardie installing  " data-param1=""
+									data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+									data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+									<!-- MAIN IMAGE -->
+									<img src="assets/images/main-slider/hardie.jpg" data-bgposition="center center"
+										data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone"
+										data-scalestart="100" data-scaleend="110" data-rotatestart="0"
+										data-rotateend="0" data-offsetstart="-500 0" data-offsetend="500 0" alt=""
+										data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+									<div class="tp-caption tp-shape tp-shapewrapper " id="slide-200-layer"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+										data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape"
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url(assets/images/overlay/rrdiagonal-line.png)">
+									</div>
+									<!-- LAYER NR. 6 -->
+									<div class="tp-caption tp-shape tp-shapewrapper" id="slide-3044-layer-11"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']"
+										data-width="full" data-height="['400','400','400','550']"
+										data-whitespace="nowrap" data-type="shape" data-basealign="slide"
+										data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"opacity:0;","speed":1500,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 10;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 0);border-width:0px;background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;">
+									</div>
+									<!-- LAYER NR. 7 -->
+									<div class="tp-caption BigBold-Title   tp-resizeme" id="slide-3044-layer-1"
+										data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['110','110','155','160']" data-fontsize="['110','100','70','50']"
+										data-lineheight="['100','90','60','60']"
+										data-width="['none','none','none','400']" data-height="none"
+										data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text"
+										data-basealign="slide" data-responsive_offset="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]"
+										data-paddingleft="[0,0,0,0]" style="z-index: 11; white-space: nowrap;">Hardie
+										installing
+									</div>
+									<!-- LAYER NR. 8 -->
+									<div class="tp-caption BigBold-SubTitle  " id="slide-3044-layer-4"
+										data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['40','1','50','58']" data-fontsize="['15','15','15','13']"
+										data-lineheight="['24','24','24','20']" data-width="['410','410','410','280']"
+										data-height="['60','100','100','100']" data-whitespace="normal" data-type="text"
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 12; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">
+										<!-- Industry is ready to help you in making unique-looking and best website in a moment. -->
+
+									</div>
+									<!-- LAYER NR. 9 -->
+									<div class="tp-caption BigBold-Button rev-btn " id="slide-3044-layer-7"
+										data-x="['left','left','left','left']" data-hoffset="['480','480','30','20']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['50','50','30','20']" data-width="none" data-height="none"
+										data-whitespace="nowrap" data-type="button"
+										data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]'
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
+										data-paddingright="[50,50,50,50]" data-paddingbottom="[15,15,15,15]"
+										data-paddingleft="[50,50,50,50]"
+										style="z-index: 13; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+										<a href="hardie-installing.html"><span style="color: white;">READ
+												MORE</span> </a>
+									</div>
+									<!-- LAYER NR. 10 -->
+									<div class="tp-caption BigBold-Button rev-btn " id="slide-3044-layer-12"
+										data-x="['left','left','left','left']" data-hoffset="['676','676','226','216']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['50','50','30','20']" data-width="none" data-height="none"
+										data-whitespace="nowrap" data-type="button"
+										data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
+										data-paddingright="[20,20,20,20]" data-paddingbottom="[15,15,15,15]"
+										data-paddingleft="[20,20,20,20]"
+										style="z-index: 14; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+										<i class="fa fa-chevron-right"></i>
+									</div>
+								</li>
+								<li data-index="rs-3045" data-transition="slideoverhorizontal" data-slotamount="default"
+									data-hideafterloop="0" data-hideslideonmobile="off" data-easein="Power4.easeInOut"
+									data-easeout="Power4.easeInOut" data-masterspeed="1000"
+									data-thumb="assets/images/main-slider/slide5.jpg" data-rotate="0"
+									data-saveperformance="off" data-title="All kind of renovations " data-param1=""
+									data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+									data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+									<!-- MAIN IMAGE -->
+									<img src="assets/images/main-slider/Renovations.jpg" data-bgposition="center center"
+										data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone"
+										data-scalestart="100" data-scaleend="110" data-rotatestart="0"
+										data-rotateend="0" data-offsetstart="-500 0" data-offsetend="500 0" alt=""
+										data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+									<div class="tp-caption tp-shape tp-shapewrapper " id="slide-200-layer"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+										data-width="full" data-height="full" data-whitespace="nowrap" data-type="shape"
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 2;background-color:rgba(0, 0, 0, 0.1);border-color:rgba(0, 0, 0, 0);border-width:0px; background-image:url(assets/images/overlay/rrdiagonal-line.png)">
+									</div>
+									<!-- LAYER NR. 6 -->
+									<div class="tp-caption tp-shape tp-shapewrapper" id="slide-3045-layer-11"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['bottom','bottom','bottom','bottom']" data-voffset="['0','0','0','0']"
+										data-width="full" data-height="['400','400','400','550']"
+										data-whitespace="nowrap" data-type="shape" data-basealign="slide"
+										data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"opacity:0;","speed":1500,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"opacity:0;","ease":"nothing"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 10;background-color:rgba(0, 0, 0, 0.50);border-color:rgba(0, 0, 0, 0);border-width:0px;background:linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.45) 100%);cursor:default;">
+									</div>
+									<!-- LAYER NR. 7 -->
+									<div class="tp-caption BigBold-Title   tp-resizeme" id="slide-3045-layer-1"
+										data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['110','110','155','160']" data-fontsize="['110','100','70','50']"
+										data-lineheight="['100','90','60','60']"
+										data-width="['none','none','none','400']" data-height="none"
+										data-whitespace="['nowrap','nowrap','nowrap','normal']" data-type="text"
+										data-basealign="slide" data-responsive_offset="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":500,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[10,10,10,10]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[10,10,10,10]"
+										data-paddingleft="[0,0,0,0]" style="z-index: 11; white-space: nowrap;">All kind
+										of renovations
+									</div>
+									<!-- LAYER NR. 8 -->
+									<div class="tp-caption BigBold-SubTitle  " id="slide-3045-layer-4"
+										data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['40','1','50','58']" data-fontsize="['15','15','15','13']"
+										data-lineheight="['24','24','24','20']" data-width="['410','410','410','280']"
+										data-height="['60','100','100','100']" data-whitespace="normal" data-type="text"
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
+										data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]"
+										data-paddingleft="[0,0,0,0]"
+										style="z-index: 12; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">
+										<!-- Industry is ready to help you in making unique-looking and best website in a moment. -->
+									</div>
+									<!-- LAYER NR. 9 -->
+									<!-- <div class="tp-caption BigBold-Button rev-btn " id="slide-3045-layer-7"
+										data-x="['left','left','left','left']" data-hoffset="['480','480','30','20']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['50','50','30','20']" data-width="none" data-height="none"
+										data-whitespace="nowrap" data-type="button"
+										data-actions='[{"event":"click","action":"scrollbelow","offset":"px","delay":""}]'
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
+										data-paddingright="[50,50,50,50]" data-paddingbottom="[15,15,15,15]"
+										data-paddingleft="[50,50,50,50]"
+										style="z-index: 13; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+										READ MORE
+									</div> -->
+									<!-- LAYER NR. 10 -->
+									<div class="tp-caption BigBold-Button rev-btn " id="slide-3045-layer-12"
+										data-x="['left','left','left','left']" data-hoffset="['676','676','226','216']"
+										data-y="['bottom','bottom','bottom','bottom']"
+										data-voffset="['50','50','30','20']" data-width="none" data-height="none"
+										data-whitespace="nowrap" data-type="button"
+										data-actions='[{"event":"click","action":"jumptoslide","slide":"next","delay":""}]'
+										data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+										data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","speed":1500,"to":"o:1;","delay":650,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"y:50px;opacity:0;","ease":"Power2.easeInOut"},{"frame":"hover","speed":"300","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);bw:1px 1px 1px 1px;"}]'
+										data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
+										data-paddingright="[20,20,20,20]" data-paddingbottom="[15,15,15,15]"
+										data-paddingleft="[20,20,20,20]"
+										style="z-index: 14; white-space: nowrap;border-color:rgba(255, 255, 255, 0.25);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;">
+										<i class="fa fa-chevron-right"></i>
+									</div>
+								</li>
+								<!-- SLIDE  -->
+							</ul>
+							<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Slider END -->
-		<!-- contact area -->
-		<div class="content-block">
-			<!-- Content Section -->
-			<div class="section-full">
-				<div class="row spno about-industry">
-					<div class="col-lg-8 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-						<div class="dlab-post-media dlab-img-effect zoom">
-							<img src="assets/images/2.jpg" alt="" class="img-cover">
-						</div>
+	</div>
+	<!-- Slider END -->
+	<!-- contact area -->
+	<div class="content-block">
+		<!-- Content Section -->
+		<div class="section-full">
+			<div class="row spno about-industry">
+				<div class="col-lg-8 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+					<div class="dlab-post-media dlab-img-effect zoom">
+						<img src="assets/images/2.jpg" alt="" class="img-cover">
 					</div>
-					<div class="col-lg-4 bg-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
-						<div class="service-box style2">
-							<div>
-								<h2 class="title text-black"><span>Stucco</span> <br />& Stone</h2>
-								<p>Stucco is a decorative coating for exterior walls. A cement plaster that is
-									applied wet and hardens to a strong finish, it can be used to cover less
-									attractive construction materials such as cinder block.</p>
-								<a href="stucco&stone.html" class="site-button outline outline-2 btnhover11">MORE</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
-						<div class="dlab-post-media dlab-img-effect zoom">
-							<img src="assets/images/home/before.jpg" alt="" class="img-cover">
-						</div>
-					</div>
-					<div class="col-lg-4 bg-secondry text-white wow fadeIn" data-wow-duration="2s"
-						data-wow-delay="0.8s">
-						<div class="service-box style2">
-							<div>
-								<h2 class="title"><span> </span> <br />Soffit installation.</h2>
-								<p style="font-size: smaller">A soffit is an exterior or interior architectural feature, generally the
-									horizontal, aloft underside of any construction element.</p>
-								<a href="soffit-installation.html"
-									class="site-button outline white outline-2 btnhover11">MORE</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-						<div class="dlab-post-media dlab-img-effect zoom">
-							<img src="assets/images/home/after.jpg" alt="" class="img-cover">
-						</div>
-					</div>
-					<div class="col-lg-4 bg-primary text-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
-						<div class="service-box style2">
-							<div>
-								<h2 class="title"><span>Hardie </span> <br />installing.</h2>
-								<p style="font-size: smaller;">Hardie Board siding is a super durable siding product that looks amazing, is
-									long-lasting, and comes with a fabulous warranty. It's made of cement, sand, and
-									cellulose fibers which combine to create an outstanding material to both protect and
-									beautify homes.</p>
-								<a href="hardie-installing.html"
-									class="site-button outline white outline-2 btnhover11">MORE</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
-						<div class="dlab-post-media dlab-img-effect zoom">
-							<img src="assets/images/home/1.jpg" alt="" class="img-cover">
-						</div>
-					</div>
-					<div class="col-lg-4 bg-primary text-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.8s">
-						<div class="service-box style2">
-							<div>
-								<h2 class="title text-black"><span>All kind of </span> <br />renovations.</h2>
-								<p style="font-size: smaller;">Renovation is the process of repairing or replacing a structure that is broken,
-									damaged, or old. Commercial or residential renovations are the most common types of
-									renovations. Renovation may also refer to creating something new or bringing
-									something back to life, and it can be used in a social context.</p>
-								<a href="stucco&stone.html"
-									class="site-button outline white outline-2 btnhover11">MORE</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 bg-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-						<div class="service-box style2">
-							<div>
-								<h2 class="title text-black"><span>Free </span> <br />Estimates.</h2>
-								<p>We provide you with the best quotation and estimate on any home renovation or installation projects for free.</p>
-								<a href="about.html" class="site-button outline outline-2 btnhover11">MORE</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-8 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
-						<div class="dlab-post-media dlab-img-effect zoom">
-							<img src="assets/images/home/2.jpg" alt="" class="img-cover">
+				</div>
+				<div class="col-lg-4 bg-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
+					<div class="service-box style2">
+						<div>
+							<h2 class="title text-black"><span>Stucco</span> <br />& Stone</h2>
+							<p>Stucco is a decorative coating for exterior walls. A cement plaster that is
+								applied wet and hardens to a strong finish, it can be used to cover less
+								attractive construction materials such as cinder block.</p>
+							<a href="stucco&stone.html" class="site-button outline outline-2 btnhover11">MORE</a>
 						</div>
 					</div>
 				</div>
+				<div class="col-lg-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
+					<div class="dlab-post-media dlab-img-effect zoom">
+						<img src="assets/images/home/before.jpg" alt="" class="img-cover">
+					</div>
+				</div>
+				<div class="col-lg-4 bg-secondry text-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.8s">
+					<div class="service-box style2">
+						<div>
+							<h2 class="title"><span> </span> <br />Soffit installation.</h2>
+							<p style="font-size: smaller">A soffit is an exterior or interior architectural feature,
+								generally the
+								horizontal, aloft underside of any construction element.</p>
+							<a href="soffit-installation.html"
+								class="site-button outline white outline-2 btnhover11">MORE</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+					<div class="dlab-post-media dlab-img-effect zoom">
+						<img src="assets/images/home/after.jpg" alt="" class="img-cover">
+					</div>
+				</div>
+				<div class="col-lg-4 bg-primary text-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
+					<div class="service-box style2">
+						<div>
+							<h2 class="title"><span>Hardie </span> <br />installing.</h2>
+							<p style="font-size: smaller;">Hardie Board siding is a super durable siding product that
+								looks amazing, is
+								long-lasting, and comes with a fabulous warranty. It's made of cement, sand, and
+								cellulose fibers which combine to create an outstanding material to both protect and
+								beautify homes.</p>
+							<a href="hardie-installing.html"
+								class="site-button outline white outline-2 btnhover11">MORE</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.6s">
+					<div class="dlab-post-media dlab-img-effect zoom">
+						<img src="assets/images/home/1.jpg" alt="" class="img-cover">
+					</div>
+				</div>
+				<div class="col-lg-4 bg-primary text-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.8s">
+					<div class="service-box style2">
+						<div>
+							<h2 class="title text-black"><span>All kind of </span> <br />renovations.</h2>
+							<p style="font-size: smaller;">Renovation is the process of repairing or replacing a
+								structure that is broken,
+								damaged, or old. Commercial or residential renovations are the most common types of
+								renovations. Renovation may also refer to creating something new or bringing
+								something back to life, and it can be used in a social context.</p>
+							<!-- <a href="stucco&stone.html" class="site-button outline white outline-2 btnhover11">MORE</a> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 bg-white wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+					<div class="service-box style2">
+						<div>
+							<h2 class="title text-black"><span>Free </span> <br />Estimates.</h2>
+							<p>We provide you with the best quotation and estimate on any home renovation or
+								installation projects for free.</p>
+							<!-- <a href="about.html" class="site-button outline outline-2 btnhover11">MORE</a> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
+					<div class="dlab-post-media dlab-img-effect zoom">
+						<img src="assets/images/home/2.jpg" alt="" class="img-cover">
+					</div>
+				</div>
 			</div>
-			<!-- Content Section End -->
 		</div>
-		<!-- contact area END -->
+		<!-- Content Section End -->
+	</div>
+	<!-- contact area END -->
 	</div>
 	<div class="section-full p-t50 p-b20 bg-primary text-white overlay-primary-dark footer-info-bar wow fadeIn"
 		data-wow-duration="2s" data-wow-delay="0.6s">
@@ -948,10 +1057,10 @@
 				<div class="col-lg-3 col-md-6 col-sm-6 m-b30">
 					<div class="icon-bx-wraper bx-style-1 p-a20 radius-sm br-col-w1">
 						<div class="icon-content">
-							<h5 class="dlab-tilte">
+							<h6 class="dlab-tilte">
 								<span class="icon-sm"><i class="ti-location-pin"></i></span>
 								Company Address
-							</h5>
+							</h6>
 							<p class="op7">1461 K.L.O Road, Kelowna, BC, Canada. V1W5N7</p>
 						</div>
 					</div>
@@ -1010,7 +1119,7 @@
 								<li><a href="gallery.html">Gallery</a></li>
 								<li><a href="about.html">About Us </a></li>
 								<li><a href="contact.html">Contact Us</a></li>
-								
+
 							</ul>
 						</div>
 					</div>
@@ -1047,9 +1156,9 @@
 					</div>
 					<div class="col-md-12 col-xl-4 col-lg-4 col-sm-6 footer-col-4 ">
 						<div class="widget">
-							<h5 class="m-b30 text-white">Subscribe To Our Newsletter</h5>
-							<p class="text-capitalize m-b20">Lorem Ipsum is simply dummy text of the printing and
-								typesetting industry has been the industry's standard dummy text ever since the..
+							<h5 class="m-b30 text-white">Start your home project today!</h5>
+							<p class="text-capitalize m-b20" style="font-size: 15px;">Bringing your home back to life
+								with a classic and a modern touch.
 							</p>
 							<!-- <div class="subscribe-form m-b20">
 								<form class="dzSubscribe" action="script/mailchamp.php" method="post">
@@ -1080,15 +1189,15 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-6 text-left "> <span>Copyright © 2021 <a href="https://keryar.com/"
 								target="_blank">KERYAR</a></span> </div>
-					<div class="col-md-6 col-sm-6 text-right ">
-						<!-- <div class="widget-link "> 
+					<!-- <div class="col-md-6 col-sm-6 text-right ">
+						<div class="widget-link "> 
 							<ul>
 								<li><a href="about-2.html"> About</a></li> 
 								<li><a href="help-desk.html"> Help Desk</a></li> 
 								<li><a href="privacy-policy.html"> Privacy Policy</a></li> 
 							</ul>
-						</div> -->
-					</div>
+						</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -1147,4 +1256,5 @@
 		});	/*ready*/
 	</script>
 </body>
+
 </html>
