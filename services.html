@@ -456,7 +456,7 @@
 			<div class="dlab-bnr-inr overlay-black-middle bg-pt"
 				style="background-image:url(assets/images/banner/Services-page.jpg); height: 500px; background-size: cover;background-repeat: no-repeat;background-position: center;">
 				<div class="container align-items-center">
-					<h1 style="margin-top: 210px; padding-left: 50px; font-size: 90px; color: #d2151e; font-family:'Times New Roman', Times, serif;">Services</h1>
+					<h1 style="margin-top: 210px; font-size: 90px; color: #d2151e; font-family:'Times New Roman', Times, serif;">Services</h1>
 					<!-- <div class="dlab-bnr-inr-entry">
                     <h1 class="text-white">Services 1</h1>
 					Breadcrumb row
@@ -622,8 +622,13 @@
 													<div class="input-group">
 														<span class="input-group-addon"><i
 																class="ti-more text-primary"></i></span>
-														<input name="subject" id="subject" type="text" class="form-control" required
-															placeholder="Service">
+																<input input list="services"  name="dzOther" type="text"  required class="form-control" placeholder="Service"id="service" name="Services">
+																<datalist id="services">
+																	<option value="Stucco & Stone">
+																	<option value="Soffit Installation">
+																	<option value="Hardie Installation">
+																	<option value="All Kind of renovation">
+																</datalist>
 													</div>
 												</div>
 											</div>

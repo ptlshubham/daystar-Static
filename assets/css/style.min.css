@@ -10,7 +10,7 @@ body {
     color: #6f6f6f;
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased
 }
@@ -129,7 +129,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 24px;
     line-height: 45px;
     margin-bottom: 25px
 }
@@ -2583,6 +2583,14 @@ blockquote:before {
 .ext-header .main-bar .logo-header {
     display: none
 }
+
+@media only screen and (max-width: 479px){
+    .h1 {
+        font-size: 24px;
+        line-height: 33px;
+    }
+}
+
 
 @media only screen and (max-width:991px) {
     .ext-header .main-bar .logo-header {
