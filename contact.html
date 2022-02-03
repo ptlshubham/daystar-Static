@@ -75,7 +75,7 @@
 					<ul>
 						<li>
 							<i class="la la-phone"></i>
-							<h4 class="title">(+1)778-363-2640</h4>
+							<h4 class="title"><a href="tel:(+1)778-363-2640">(+1)778-363-2640</a></h4>
 							<span>Call Us</span>
 						</li>
 						<li>
@@ -142,7 +142,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<div class="input-group">
-													<input name="dzName" type="text" required
+													<input name="name" id="name" type="text" required
 														class="form-control" placeholder="Your Name">
 												</div>
 											</div>
@@ -150,7 +150,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<div class="input-group">
-													<input name="dzEmail" type="email" class="form-control"
+													<input name="email" id="email" type="email" class="form-control"
 														required placeholder="Your Email Id">
 												</div>
 											</div>
@@ -158,7 +158,7 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<div class="input-group">
-													<input input list="services"  name="dzOther" type="text"  required class="form-control" placeholder="Service"id="service" name="Services">
+													<input input list="services"  name="subject" id="subject" type="text"  required class="form-control" placeholder="Service"id="service" name="Services">
 													<datalist id="services">
 														<option value="Stucco & Stone">
 														<option value="Soffit Installation">
@@ -171,7 +171,7 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<div class="input-group">
-													<textarea name="dzMessage" rows="4" class="form-control"
+													<textarea name="body" id="body" rows="4" class="form-control"
 														required placeholder="Your Message..."></textarea>
 												</div>
 											</div>
@@ -180,8 +180,7 @@
 								</div>
 								<div class="modal-footer " style="border-top:none !important">
 									<button class="site-button radius-no btnhover11" type="submit"
-										style="color: white;"><span class="button_label">Send
-											Enquiry</span></button>
+										style="color: white;"><span class="button_label">Get A Quote</span></button>
 								</div>
 							</div>
 						</form>
@@ -428,14 +427,14 @@
 							</ul>
 						</li> -->
 					</ul>	
-					<div class="dlab-social-icon">
+					<!-- <div class="dlab-social-icon">
 						<ul>
 							<li><a class="site-button facebook sharp-sm outline fa fa-facebook" href="javascript:void(0);"></a></li>
 							<li><a class="site-button twitter sharp-sm outline fa fa-twitter" href="javascript:void(0);"></a></li>
 							<li><a class="site-button linkedin sharp-sm outline fa fa-linkedin" href="javascript:void(0);"></a></li>
 							<li><a class="site-button instagram sharp-sm outline fa fa-instagram" href="javascript:void(0);"></a></li>
 						</ul>
-					</div>	
+					</div>	 -->
 				</div>
 			</div>
 		</div>
@@ -446,10 +445,10 @@
     <!-- Content -->
     <div class="page-content bg-white">
         <!-- inner page banner -->
-        <div class="tp-banner-container"
-				style="background-image:url(assets/images/banner/Contact\ Us.jpg); height: 500px; background-size: cover;background-repeat: no-repeat;background-position: center;">
-            <div class="container">
-				<h1 style=" padding-top: 230px; float: left; padding-left: 50px; font-size: 50px; color: #d2151e; font-family:'Times New Roman', Times, serif;">Contact Us</h1>
+        <div class="dlab-bnr-inr overlay-black-middle bg-pt"
+				style="background-image:url(assets/images/banner/Contact\ Us.jpg); height: 400px; background-size: cover;background-repeat: no-repeat;background-position: center;">
+            <div class="container align-items-center">
+				<h1 style="text-align: center; padding-top: 230px; font-size: 50px; color: #d2151e; font-family: 'Poppins', sans-serif;">Contact Us</h1>
                 <!-- <div class="dlab-bnr-inr-entry "> -->
                     <!-- <h1 class="text-white">Contact Us</h1> -->
 					<!-- Breadcrumb row -->
@@ -491,7 +490,7 @@
 							<div class="icon-lg text-primary m-b20"> <a href="javascript:void(0);" class="icon-cell"><i class="ti-mobile"></i></a> </div>
 							<div class="icon-content">
 								<h5 class="dlab-tilte text-uppercase">Phone</h5>
-								<p style="text-align: center;">+1 778-363-2640 <br/></p>
+								<p style="text-align: center;"><a href="tel:+1 778-363-2640">(+1) 778-363-2640</a> <br/></p>
 							</div>
 						</div>
 					</div>
@@ -669,7 +668,8 @@
                                 <li><i class="ti-location-pin"></i>
 									<!-- <strong>address</strong>  -->
 									1461 K.L.O Road, Kelowna, BC, Canada. V1W5N7 </li>
-                                <li><i class="ti-mobile" style="size: 10px;"></i>0800-123456 (24/7 Support Line)</li>
+                                <li><i class="ti-mobile" style="size: 10px;"></i><a href="tel:+ (1) 778-363-2640">+ (1) 778-363-2640</a> (24/7 Support Line)
+								</li>
 									<!-- <strong>phone</strong> -->
 									
 								<li><i class="ti-email"></i>

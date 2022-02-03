@@ -5809,7 +5809,7 @@ a.close.disabled {
 
 .modal-header {
 	display: -ms-flexbox;
-	display: flex;
+	/* display: flex; */
 	-ms-flex-align: start;
 	align-items: flex-start;
 	-ms-flex-pack: justify;
@@ -5822,7 +5822,7 @@ a.close.disabled {
 
 .modal-header .close {
 	padding: 1rem 1rem;
-	margin: -1rem -7rem -1rem auto
+	margin: -1rem -1rem -1rem auto
 }
 
 .modal-title {
@@ -15457,17 +15457,18 @@ Copyright (c) 2014 Daniel Eden
 	right: 20px
 }
 
-/* .lg-actions .lg-next:before {
+.lg-actions .lg-next:before {
 	content: "\e095"
-} */
+}
 
 .lg-actions .lg-prev {
 	left: 20px
 }
 
-/* .lg-actions .lg-prev:after {
+.lg-actions .lg-prev:after {
 	content: "\e094"
-} */
+}
+
 
 @-webkit-keyframes lg-right-end {
 	0%, 100% {

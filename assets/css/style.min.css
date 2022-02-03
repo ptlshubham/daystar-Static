@@ -3078,7 +3078,8 @@ blockquote:before {
     font-size: 9px;
     margin-left: 3px;
     margin-top: -3px;
-    vertical-align: middle
+    vertical-align: middle;
+    font-family: 'Poppins', sans-serif;
 }
 
 .header-nav .nav>li {
@@ -10048,10 +10049,9 @@ ul[class*=list-] {
 }
 
 .modal-header {
-    /* background: #efbb20; */
-    background: white;
-    padding: 0px 111px;
-    padding-top: 10px;
+    background: #ffffff;
+    /* padding: 0px 111px; */
+    /* padding-top: 10px; */
     
 }
 
