@@ -159,7 +159,7 @@ h5 {
 }
 
 h6 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 22px;
     margin-bottom: 10px
 }
@@ -2752,7 +2752,8 @@ blockquote:before {
 .service-list ul {
     margin: 0;
     padding: 0;
-    list-style: none
+    list-style: none;
+    margin-left: 101px;
 }
 
 .service-list ul li {
